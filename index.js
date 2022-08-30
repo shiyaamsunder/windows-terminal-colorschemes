@@ -54,6 +54,7 @@ async function setSchemeForProfile(profileName, colorScheme) {
   let updatedSettings = {
     ...settings,
     profiles: {
+      ...settings.profiles,
       list: updatedProfile
     }
   }
