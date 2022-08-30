@@ -1,0 +1,165 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "keys": "alt+shift+d"
+    }
+  ],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Gruvbox Dark",
+      "font": {
+        "face": "CaskaydiaCove NF"
+      },
+      "opacity": 100,
+      "padding": "0",
+      "scrollbarState": "hidden",
+      "useAcrylic": false
+    },
+    "list": [
+      {
+        "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "colorScheme": "Gruvbox dark, medium",
+        "commandline": "%SystemRoot%\\System32\\cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      },
+      {
+        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+        "hidden": false,
+        "name": "Git Bash",
+        "source": "Git"
+      },
+      {
+        "bellStyle": "taskbar",
+        "colorScheme": "Shiyaam's Gruvbox Dark",
+        "cursorShape": "filledBox",
+        "font": {
+          "face": "CaskaydiaCove NF",
+          "size": 11,
+          "weight": "normal"
+        },
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "hidden": false,
+        "name": "Ubuntu",
+        "padding": "0",
+        "scrollbarState": "hidden",
+        "source": "Windows.Terminal.Wsl"
+      },
+      {
+        "guid": "{2a87b704-a288-57c6-99d6-5745584b778b}",
+        "hidden": false,
+        "name": "Developer Command Prompt for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "guid": "{e7329c94-9bf7-5ddb-a007-57abc4955039}",
+        "hidden": false,
+        "name": "Developer PowerShell for VS 2022",
+        "source": "Windows.Terminal.VisualStudio"
+      },
+      {
+        "elevate": false,
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "hidden": false,
+        "name": "PowerShell",
+        "source": "Windows.Terminal.PowershellCore",
+        "suppressApplicationTitle": true
+      },
+      {
+        "colorScheme": "Shiyaam's Gruvbox Dark",
+        "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+        "elevate": false,
+        "guid": "{cdf5f2e9-0439-494d-8e35-89e202911d2a}",
+        "hidden": false,
+        "icon": "ms-appx:///ProfileIcons/pwsh.png",
+        "name": "neovim config",
+        "startingDirectory": "C:\\Users\\shiya\\AppData\\Local\\nvim",
+        "suppressApplicationTitle": true
+      },
+      {
+        "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+        "elevate": true,
+        "guid": "{dd2a0234-3617-478e-b763-47c9bcbb2b89}",
+        "hidden": false,
+        "icon": "ms-appx:///ProfileIcons/pwsh.png",
+        "name": "PowerShell (Admin)",
+        "startingDirectory": "%USERPROFILE%",
+        "suppressApplicationTitle": true
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#1F2430",
+      "black": "#101521",
+      "blue": "#77A8D9",
+      "brightBlack": "#707A8C",
+      "brightBlue": "#D1E4F4",
+      "brightCyan": "#5CCFE6",
+      "brightGreen": "#BAE67E",
+      "brightPurple": "#D4BFFF",
+      "brightRed": "#F28779",
+      "brightWhite": "#FAFAFA",
+      "brightYellow": "#FFD580",
+      "cursorColor": "#FFCC66",
+      "cyan": "#73D0FF",
+      "foreground": "#CCCCCC",
+      "green": "#A6CC70",
+      "name": "Ayu Mirage",
+      "purple": "#A37ACC",
+      "red": "#FF3333",
+      "selectionBackground": "#33415E",
+      "white": "#CBCCC6",
+      "yellow": "#FFCC66"
+    },
+    {
+      "name": "Gruvbox Dark",
+      "black": "#1e1e1e",
+      "red": "#be0f17",
+      "green": "#868715",
+      "yellow": "#cc881a",
+      "blue": "#377375",
+      "purple": "#a04b73",
+      "cyan": "#578e57",
+      "white": "#978771",
+      "brightBlack": "#7f7061",
+      "brightRed": "#f73028",
+      "brightGreen": "#aab01e",
+      "brightYellow": "#f7b125",
+      "brightBlue": "#719586",
+      "brightPurple": "#c77089",
+      "brightCyan": "#7db669",
+      "brightWhite": "#e6d4a3",
+      "background": "#1e1e1e",
+      "foreground": "#e6d4a3",
+      "cursorColor": "#e6d4a3",
+      "selectionBackground": "#e6d4a3"
+    }
+  ]
+}
