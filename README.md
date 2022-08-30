@@ -5,9 +5,7 @@ Set colorschemes for your Windows Terminal with ease.
 ## How to use
 
 ```cmd
-npm i -g windows-color-schemes
-```
+npm i -g windows-terminal-colorschemes
 
-```cmd
 npx wtc
 ```
