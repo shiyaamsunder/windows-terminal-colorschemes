@@ -27,12 +27,7 @@ async function writeThemeToFile(themeName, themes) {
 
 async function writeToFile(path, content) {
   contentString = JSON.stringify(content, null, 2)
-  try {
-    await fsPromises.writeFile(path, contentString)
-  }
-  catch (err) {
-    console.log(err)
-  }
+  await fsPromises.writeFile(path, contentString)
 }
 async function setSchemeForProfile(profileName, colorScheme) {
 
@@ -59,14 +54,7 @@ async function setSchemeForProfile(profileName, colorScheme) {
     }
   }
 
-  try {
-    await writeToFile(SETTINGS_PATH, updatedSettings)
-    console.log("Theme set successfully")
-
-  } catch (error) {
-
-    console.error(error)
-  }
+  await writeToFile(SETTINGS_PATH, updatedSettings)
 
 }
 
@@ -77,22 +65,32 @@ async function getTerminalProfileNames() {
 }
 
 async function getTerminalSettings() {
-  let settingsFile;
+  let settingsFile = await fs.promises.readFile(SETTINGS_PATH, { encoding: "utf-8" })
+  let settings
   try {
-    settingsFile = await fs.promises.readFile(SETTINGS_PATH, "utf-8")
-  } catch (error) {
-    console.error(error)
+
+    settings = JSON.parse(settingsFile)
   }
-  let settings = JSON.parse(settingsFile)
+  catch (err) {
+    console.log(err)
+  }
   return settings
 }
+
+async function getCurrentScheme(profileName) {
+
+  let settings = await getTerminalSettings();
+  return settings.profiles.list.filter(p => p.name === profileName)[0]?.colorScheme
+}
+
+
 
 function main() {
   (async () => {
 
     let profiles = await getTerminalProfileNames()
     let selectedProfile;
-    await prompts([{
+    const response = await prompts([{
       type: 'autocomplete',
       name: 'profile',
       message: 'Select the current Terminal Profile',
@@ -118,16 +116,29 @@ function main() {
         }
       }),
 
-      //TODO: fix multiple console.logs
+      //TODO: gracefully exit and reset to old theme while exiting
       onState: async (state) => {
         if (state.value) {
           await writeThemeToFile(state.value, themes)
           await setSchemeForProfile(selectedProfile, state.value)
         }
-      }
+
+      },
     }])
+
+    try {
+
+      if (response.theme && response.profile) {
+        await setSchemeForProfile(response.profile, response.theme)
+        console.log(`✔ ${response.theme} set successfully for profile ${response.profile}`)
+      }
+    } catch (err) {
+      console.error("Something went wrong")
+    }
   })()
 
 }
 
 main()
+
+
