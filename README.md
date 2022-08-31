@@ -9,3 +9,7 @@ npm i -g windows-terminal-colorschemes
 
 npx wtc
 ```
+
+
+## Note
+As of now this doesn't work inside WSL profile.
