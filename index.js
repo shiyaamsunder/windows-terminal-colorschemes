@@ -33,7 +33,7 @@ async function setSchemeForProfile(profileName, colorScheme) {
 
   let settings = await getTerminalSettings();
 
-  let profilesList = settings.profiles.list
+  let profilesList = settings?.profiles.list
   let updatedProfile = profilesList.map(tp => {
     if (tp.name === profileName) {
       return {
@@ -126,15 +126,7 @@ function main() {
       },
     }])
 
-    try {
-
-      if (response.theme && response.profile) {
-        await setSchemeForProfile(response.profile, response.theme)
-        console.log(`✔ ${response.theme} set successfully for profile ${response.profile}`)
-      }
-    } catch (err) {
-      console.error("Something went wrong")
-    }
+    // console.log(`✔ ${response.theme} set successfully for profile ${response.profile}`)
   })()
 
 }
