@@ -1,6 +1,6 @@
 {
   "name": "windows-terminal-colorschemes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple script for setting themes in Windows Terminal",
   "main": "index.js",
   "bin": {
